@@ -19,6 +19,7 @@ public class Producer {
     @EventListener(ApplicationStartedEvent.class)
     public void generate(){
         for(int i=1; i<=10; i++){
+            //publish data to testTopic
             kafkaTemplate.send("testTopic", "Value is "+i);
         }
         
